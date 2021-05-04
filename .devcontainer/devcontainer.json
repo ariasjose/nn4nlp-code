@@ -1,0 +1,78 @@
+{
+    // A display name for the container.
+    "name": "Python 3 dev environment",
+    // Update the 'dockerComposeFile' list if you have more compose files or use different names.
+    // The .devcontainer/docker-compose.yml file contains any overrides you need/want to make.
+    "dockerComposeFile": [
+        "docker-compose.yml"
+    ],
+    // The 'service' property is the name of the service for the container that VS Code should
+    // use. Update this value and .devcontainer/docker-compose.yml to the real service name.
+    "service": "dev",
+    // Sets the default path that VS Code should open when connecting to the container (which
+    // is often the path to a volume mount where the source code can be found in the container).
+    "workspaceFolder": "/workspace",
+    // Set *default* container specific settings.json values on container create.
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "python.pythonPath": "/opt/venv/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
+        "python.formatting.blackPath": "/usr/local/py-utils/bin/black",
+        "python.formatting.yapfPath": "/usr/local/py-utils/bin/yapf",
+        "python.formatting.provider": "black",
+        "python.linting.banditPath": "/usr/local/py-utils/bin/bandit",
+        "python.linting.flake8Path": "/usr/local/py-utils/bin/flake8",
+        "python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
+        "python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
+        "python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
+        "python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
+        "files.trimTrailingWhitespace": true,
+        "files.autoSave": "afterDelay",
+        // "files.autoSaveDelay": 2000,
+        // "sqltools.connections": [
+        //     {
+        //         "name": "MySQL DB",
+        //         "driver": "MySQL",
+        //         "previewLimit": 10,
+        //         "server": "mysqldbhost1",
+        //         "port": 3306,
+        //         "database": "db_name",
+        //         "username": "user",
+        //         "password": "pass"
+        //     }
+        // ],
+        "python.languageServer": "Pylance",
+        "jupyter.alwaysTrustNotebooks": true,
+        // For which languages indent-rainbow should be activated (if empty it means all).
+        "indentRainbow.includedLanguages": [
+            "nim",
+            "python"
+        ],
+        "git.ignoreLimitWarning": true,
+        // "java.home": "/docker-java-home" ??
+    },
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": [
+        "aaron-bond.better-comments",
+        "eamodio.gitlens",
+        "formulahendry.code-runner",
+        "GrapeCity.gc-excelviewer",
+        "kevinrose.vsc-python-indent",
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        // "mtxr.sqltools",
+        // "mtxr.sqltools-driver-mysql",
+        "njpwerner.autodocstring",
+        "redhat.vscode-yaml",
+    ]
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [],
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // "postCreateCommand": "pip3 install --user -r requirements.txt",
+    // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+    // "remoteUser": "vscode"
+}

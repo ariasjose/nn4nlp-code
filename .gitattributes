@@ -1,0 +1,3 @@
+# Use this file to list all file types which explicitly need EOL conversion.
+# Example:
+#   *.java +crlf

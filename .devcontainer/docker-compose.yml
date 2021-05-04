@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  # Dev container
+  dev:
+    build:
+      context: ..
+      dockerfile: ./Dockerfile
+      args:
+        VARIANT: 3.9
+
+    volumes:
+      - ..:/workspace:default
+
+    # Overrides default command so things don't shut down after the process ends.
+    command: sleep infinity
+
+    # networks:
+    #   - backend
+
+    ports:
+      - 127.0.0.1:8888:80/tcp # Jupyter Notebook
+
+
+# networks:
+#   backend:
+
+# volumes: # named volumes can be managed easier using docker-compose
+#   mysql-data1:
